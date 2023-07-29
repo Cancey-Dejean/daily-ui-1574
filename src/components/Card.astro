@@ -1,17 +1,50 @@
 ---
 interface Props {
-	cardColor?: "shadow-card-solid-1" | "shadow-card-solid-2" | "shadow-card-solid-3";
-	title: string;
-	body: string;
-	href: string;
+  cardColor?:
+    | "shadow-card-solid-1"
+    | "shadow-card-solid-2"
+    | "shadow-card-solid-3"
+  title?: string
+  imgSrc?: string
+  imgAlt?: string
+  body?: string
+  btnText?: string
+  href?: string
 }
 
-const { cardColor = "", title, body } = Astro.props;
+const {
+  cardColor = "",
+  btnText = "Add subscription",
+  imgSrc = "",
+  imgAlt = "placeholder",
+} = Astro.props
 ---
 
 <div class="flex-1 w-full">
-	<div class={`bg-white p-10 max-w-[285px] w-full min-h-[326px] rounded-[14px] ${cardColor ? `ml-[24px] ${cardColor}` : "ml-0 max-w-full"}`}>
-		<p>All devices come with free delivery or pickup as standard. See information on available shopping options for your location.</p>
-	</div>
-</div>
+  <div
+    class={`bg-white p-10 max-w-[285px] w-full min-h-[326px] rounded-[14px] flex  flex-col ml-0 ${
+      cardColor ? `ml-[24px] ${cardColor}` : "max-w-full"
+    }`}
+  >
+    <div class="flex flex-col gap-4">
+      <div>
+        <img src={imgSrc} alt={imgAlt} />
+      </div>
 
+      <div>
+        <p>Ice Mobile 10GB</p>
+
+        <p>Up to 100Mbit/s</p>
+      </div>
+
+      <div>
+        <span>299,-</span>
+        <span>/month</span>
+      </div>
+    </div>
+
+    <div class="mt-auto">
+      <a href="#">{btnText}</a>
+    </div>
+  </div>
+</div>

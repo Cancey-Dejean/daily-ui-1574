@@ -1,25 +1,37 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from "../components/Card.astro";
+import Layout from "../layouts/Layout.astro"
+import Card from "../components/Card.astro"
 ---
 
 <Layout title="Welcome to Astro.">
-	<main class="flex justify-center items-center h-full text-color-text bg-color-body font-body">
-		<div class="rounded-[23px] shadow-edges bg-color-main max-w-[1308px] mx-auto w-full py-[82px] px-[20px]">
-			<div class="max-w-[1007px] w-full mx-auto flex flex-col items-center gap-14">
-				<div class="max-w-[713px] w-full mx-auto text-center flex flex-col items-center gap-6 text-[18px] font-normal">
-					<h1 class="max-w-[579px] w-full text-[32px] font-black font-title">Get the most out of your mobile with the right subscription</h1>
-	
-					<p>All devices come with free delivery or pickup as standard. See information on available shopping options for your location.</p>
-				</div>
+  <main
+    class="flex justify-center items-center h-full text-color-text bg-color-body font-body"
+  >
+    <div
+      class="rounded-[23px] shadow-edges bg-color-main max-w-[1308px] mx-auto w-full py-[82px] px-[20px]"
+    >
+      <div
+        class="max-w-[1007px] w-full mx-auto flex flex-col items-center gap-14"
+      >
+        <div
+          class="max-w-[713px] w-full mx-auto text-center flex flex-col items-center gap-6 text-[18px] font-normal"
+        >
+          <h1 class="max-w-[579px] w-full text-[32px] font-black font-title">
+            Get the most out of your mobile with the right subscription
+          </h1>
 
-				<div class="grid grid-cols-3 gap-[40px] w-full min-h-[350px] h-full">
-					<Card cardColor="shadow-card-solid-1" />
-					<Card cardColor="shadow-card-solid-2" />
-					<Card cardColor="shadow-card-solid-3"/>
-				</div>
-			</div>
-		</div>
-	</main>
+          <p>
+            All devices come with free delivery or pickup as standard. See
+            information on available shopping options for your location.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-3 gap-[40px] w-full min-h-[350px] h-full">
+          <Card cardColor="shadow-card-solid-1" imgSrc="/images/ice@2x.png" />
+          <Card cardColor="shadow-card-solid-2" />
+          <Card cardColor="shadow-card-solid-3" />
+        </div>
+      </div>
+    </div>
+  </main>
 </Layout>
-
