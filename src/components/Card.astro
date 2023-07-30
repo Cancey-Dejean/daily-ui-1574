@@ -1,50 +1,76 @@
 ---
+import Button from "../components/Button.astro"
+
 interface Props {
   cardColor?:
     | "shadow-card-solid-1"
     | "shadow-card-solid-2"
     | "shadow-card-solid-3"
-  title?: string
   imgSrc?: string
   imgAlt?: string
-  body?: string
+  featureTitle?: string
+  featureDesc?: string
+  featurePrice?: number | string
+  subscriptionType?: "monthly" | "yearly"
   btnText?: string
   href?: string
+  showButton?: boolean
 }
 
 const {
-  cardColor = "",
-  btnText = "Add subscription",
+  cardColor = "shadow-card-solid-1",
   imgSrc = "",
   imgAlt = "placeholder",
+  featureTitle = "Feature Title",
+  featureDesc = "Lorem ipsum dolor sit.",
+  featurePrice = "100",
+  subscriptionType = "monthly",
+  btnText = "",
+  showButton = true,
 } = Astro.props
 ---
 
-<div class="flex-1 w-full">
+<div
+  class="flex-1 w-full transition-transform duration-[.3s] ease-in-out lg:hover:-translate-y-3"
+>
   <div
-    class={`bg-white p-10 max-w-[285px] w-full min-h-[326px] rounded-[14px] flex  flex-col ml-0 ${
+    class={`bg-white p-10 h-full rounded-[14px] flex flex-col gap-10 md:flex-col ml-0  ${
       cardColor ? `ml-[24px] ${cardColor}` : "max-w-full"
     }`}
   >
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-col items-start gap-4">
       <div>
-        <img src={imgSrc} alt={imgAlt} />
+        <img
+          src={imgSrc}
+          alt={imgAlt}
+          class="max-h-[30px] w-full object-contain"
+          width="40"
+          height="27"
+        />
       </div>
 
       <div>
-        <p>Ice Mobile 10GB</p>
+        <p class="font-semibold">{featureTitle}</p>
 
-        <p>Up to 100Mbit/s</p>
+        <p class="font-normal text-sm">{featureDesc}</p>
       </div>
 
-      <div>
-        <span>299,-</span>
-        <span>/month</span>
-      </div>
+      {
+        featurePrice !== "" && (
+          <div class="flex items-center gap-1">
+            <span class="text-2xl font-bold">${featurePrice},-</span>
+            <span class="font-normal text-sm">/{subscriptionType}</span>
+          </div>
+        )
+      }
     </div>
 
-    <div class="mt-auto">
-      <a href="#">{btnText}</a>
-    </div>
+    {
+      showButton && (
+        <div class="mt-auto">
+          <Button btnText={btnText} />
+        </div>
+      )
+    }
   </div>
 </div>

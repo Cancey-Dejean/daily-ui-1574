@@ -14,6 +14,7 @@ module.exports = {
       },
       boxShadow: {
         edges: "0px 47px 57px -26px rgba(83, 83, 144, 0.14)",
+        button: "0px 4px 0px 0px #E7E7FB",
         "card-solid-1": "-24px -24px 0px 0px #ECEEFF;",
         "card-solid-2": "-24px -24px 0px 0px #F9ECFF;",
         "card-solid-3": "-24px -24px 0px 0px #FFFBEC;",

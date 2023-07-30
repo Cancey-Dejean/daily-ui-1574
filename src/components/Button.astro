@@ -1,0 +1,16 @@
+---
+interface Props {
+  primary?: boolean
+  btnText?: string
+  href?: string
+}
+
+const { btnText = "Button", href = "#", primary } = Astro.props
+---
+
+<a
+  href={href}
+  class={`py-4 px-6 inline-block bg-color-main rounded-[41px] text-base font-normal shadow-button ${primary ? "bg-color-text text-white shadow-none" : ""}`}
+>
+  {btnText}
+</a>
