@@ -11,7 +11,7 @@ interface Props {
   featureTitle?: string
   featureDesc?: string
   featurePrice?: number | string
-  subscriptionType?: "monthly" | "yearly"
+  subscriptionType?: "month" | "year"
   btnText?: string
   href?: string
   showButton?: boolean
@@ -24,7 +24,7 @@ const {
   featureTitle = "Feature Title",
   featureDesc = "Lorem ipsum dolor sit.",
   featurePrice = "100",
-  subscriptionType = "monthly",
+  subscriptionType = "month",
   btnText = "",
   showButton = true,
 } = Astro.props
